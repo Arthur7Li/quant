@@ -1,0 +1,27 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+        args: ["--maxkb=500"]
+      - id: detect-private-key
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.0
+    hooks:
+      - id: ruff
+        args: ["--fix"]
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: forbid-vendor-data-and-secrets
+        name: Block raw market data and .env files from Git commits
+        entry: python3 -c "import sys; blocked = [f for f in sys.argv[1:] if f.startswith('data/') or f.endswith('.dbn') or f == '.env']; sys.exit(f'Blocked files staged: {blocked}' if blocked else 0)"
+        language: system
+        pass_filenames: true

@@ -1,0 +1,50 @@
+# Python & packaging
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments & tool caches
+.venv/
+venv/
+ENV/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+htmlcov/
+coverage.xml
+
+# Market data & local caches (NEVER commit vendor data to public repo)
+data/
+.cache/
+*.dbn
+*.dbn.zst
+*.feather
+
+# Secrets & environment variables
+.env
+.env.*
+!.env.example
+
+# Model checkpoints & large artifacts
+checkpoints/
+*.ckpt
+*.pt
+*.pth
+*.onnx
+
+# Jupyter & OS
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# Explicitly track the two-file experiment ledger in experiments/
+!experiments/ledger.jsonl
+!experiments/trial_returns.parquet
+!experiments/README.md
