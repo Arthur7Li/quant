@@ -10,7 +10,7 @@ Every module, notebook, and test in `quant-lab` must adhere to the conventions d
 2. **Primary Exchange Calendar:** `XNYS` (New York Stock Exchange) via `exchange_calendars`.
    - Regular trading session: `09:30:00` to `16:00:00 America/New_York` (early closes at `13:00:00 America/New_York` on designated half-days).
 3. **Internal Timestamp Standard:**
-   - All timestamps in storage (Parquet) and memory are **timezone-aware UTC (`datetime64[ns, UTC]`)**.
+   - All timestamps in storage (Parquet) and memory are **timezone-aware UTC (`datetime64[us, UTC]` / `pl.Datetime("us", "UTC")`)**.
    - Every dataset record carries **two timestamps**:
      - `period_ts`: The nominal bar date or observation period (normalized to midnight UTC `00:00:00Z` for daily bars, or bar close timestamp for intraday bars).
      - `available_ts`: The exact UTC timestamp when the datum became knowable to a market participant:

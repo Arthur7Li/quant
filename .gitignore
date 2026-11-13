@@ -21,8 +21,8 @@ htmlcov/
 coverage.xml
 
 # Market data & local caches (NEVER commit vendor data to public repo)
-data/
-.cache/
+/data/
+/.cache/
 *.dbn
 *.dbn.zst
 *.feather
@@ -33,7 +33,7 @@ data/
 !.env.example
 
 # Model checkpoints & large artifacts
-checkpoints/
+/checkpoints/
 *.ckpt
 *.pt
 *.pth
