@@ -77,8 +77,8 @@ def _default_http_get(url: str, headers: dict[str, str]) -> str:
     if not url.startswith("https://"):
         msg = f"Only https:// URLs are permitted, got {url!r}."
         raise ValueError(msg)
-    req = urllib.request.Request(url, headers=headers, method="GET")  # noqa: S310
-    with urllib.request.urlopen(req, timeout=30.0) as resp:  # noqa: S310
+    req = urllib.request.Request(url, headers=headers, method="GET")
+    with urllib.request.urlopen(req, timeout=30.0) as resp:
         raw_bytes: bytes = resp.read()
     return raw_bytes.decode("utf-8")
 
@@ -285,9 +285,9 @@ class StooqProvider:
 
     def fetch_corporate_actions(
         self,
-        tickers: Sequence[str],  # noqa: ARG002
-        start_date: date,  # noqa: ARG002
-        end_date: date,  # noqa: ARG002
+        tickers: Sequence[str],
+        start_date: date,
+        end_date: date,
     ) -> pl.DataFrame:
         """Return an empty actions DataFrame (Stooq CSVs embed adjustments directly)."""
         return empty_actions_frame()

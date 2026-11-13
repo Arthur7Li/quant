@@ -1,6 +1,6 @@
 """Point-in-Time (PIT) Parquet store with DuckDB/Polars out-of-core queries and content hashing.
 
-Implements `QUANT_PROJECT_DESIGN.md` §3, §4 Rules 2–3, and `docs/conventions.md` §1, §5:
+Implements `QUANT_PROJECT_DESIGN.md` §3, §4 Rules 2-3, and `docs/conventions.md` §1, §5:
 - Raw OHLCV bars and corporate actions are persisted as Parquet files alongside a
   deterministic SHA-256 content manifest (`manifest.json`).
 - All queries require an explicit `as_of_ts` (UTC timestamp) and push down the
@@ -94,10 +94,8 @@ class PointInTimeStore:
                 .sort(["ticker", "period_ts"])
             )
         else:
-            bars = (
-                bars.unique(subset=["ticker", "period_ts"], keep="last").sort(
-                    ["ticker", "period_ts"]
-                )
+            bars = bars.unique(subset=["ticker", "period_ts"], keep="last").sort(
+                ["ticker", "period_ts"]
             )
 
         if self.actions_path.exists():
@@ -108,11 +106,9 @@ class PointInTimeStore:
                 .sort(["ticker", "ex_date"])
             )
         else:
-            clean_actions = (
-                clean_actions.unique(subset=["ticker", "ex_date", "source"], keep="last").sort(
-                    ["ticker", "ex_date"]
-                )
-            )
+            clean_actions = clean_actions.unique(
+                subset=["ticker", "ex_date", "source"], keep="last"
+            ).sort(["ticker", "ex_date"])
 
         if validate:
             report = validate_bars(bars, actions=clean_actions)
@@ -184,7 +180,7 @@ class PointInTimeStore:
         where_sql = " AND ".join(clauses)
         parquet_file = str(self.bars_path)
         query = (
-            f"SELECT ticker, period_ts, available_ts, open, high, low, close, volume, source "  # noqa: S608
+            f"SELECT ticker, period_ts, available_ts, open, high, low, close, volume, source "
             f"FROM read_parquet({parquet_file!r}) "
             f"WHERE {where_sql} "
             f"ORDER BY ticker, period_ts"

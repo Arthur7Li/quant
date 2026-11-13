@@ -1,19 +1,19 @@
 """Canonical Polars schemas, US equity universe constants, and UTC/XNYS timestamp helpers.
 
 Follows the dual-timestamp (`period_ts`, `available_ts`) and raw-OHLCV + corporate-action
-conventions defined in `docs/conventions.md` §1–2.
+conventions defined in `docs/conventions.md` §1-2.
 """
 
 from __future__ import annotations
 
 from collections.abc import Sequence
-from datetime import date, datetime, time, timezone
+from datetime import UTC, date, datetime, time, timezone
 from typing import Final
 from zoneinfo import ZoneInfo
 
 import polars as pl
 
-UTC_TZ: Final[timezone] = timezone.utc
+UTC_TZ: Final[timezone] = UTC
 NY_TZ: Final[ZoneInfo] = ZoneInfo("America/New_York")
 US_EQUITY_CLOSE_TIME_ET: Final[time] = time(16, 0, 0)
 

@@ -476,7 +476,7 @@ Execute **Phase 0 (Repo Bootstrap: items 1–4)** as a single cohesive foundatio
 
 ### Phase 1 Kickoff Tasks (One Task Spec per Item)
 5. [x] `DataProvider` protocol + deterministic synthetic provider (`data/synthetic.py`) + Tiingo/Stooq/`yfinance` providers + `data/adjustments.py` (raw OHLCV + splits/dividends) + `data/validation.py` + local PIT Parquet cache.
-6. [ ] `core/returns.py` + `core/metrics.py` with known-answer tests and Lo (2002) Sharpe standard errors.
+6. [x] `core/returns.py` + `core/metrics.py` with known-answer tests and Lo (2002) Sharpe standard errors.
 7. [ ] `validation/leakage.py` suite (future-poison, $+1$/$-1$ shift probes, shuffled-label, and in-fold preprocessor tests) verified against deliberately leaky fixture strategies.
 8. [ ] Notebook 01 (`01_markets_prices_returns.ipynb`) and `README.md` "Getting Started."
 9. [ ] Create task specs / GitHub Issues for the remainder of Phase 1 (§1.2 Notebooks 02–12 and §1.4 modules).

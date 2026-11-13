@@ -1,1 +1,51 @@
 """Core return calculations, performance metrics, and XNYS calendar alignment."""
+
+from quantlab.core.metrics import (
+    PerformanceSummary,
+    annualized_return,
+    annualized_volatility,
+    calmar_ratio,
+    compute_turnover,
+    drawdown_series,
+    max_drawdown,
+    sharpe_confidence_interval,
+    sharpe_ratio,
+    sharpe_standard_error,
+    sortino_ratio,
+    summarize_performance,
+)
+from quantlab.core.returns import (
+    TRADING_DAYS_PER_YEAR,
+    aggregate_multi_period_returns,
+    compound_returns,
+    excess_returns,
+    log_to_simple_returns,
+    portfolio_returns,
+    prices_to_returns,
+    simple_to_log_returns,
+    wealth_index,
+)
+
+__all__ = [
+    "TRADING_DAYS_PER_YEAR",
+    "PerformanceSummary",
+    "aggregate_multi_period_returns",
+    "annualized_return",
+    "annualized_volatility",
+    "calmar_ratio",
+    "compound_returns",
+    "compute_turnover",
+    "drawdown_series",
+    "excess_returns",
+    "log_to_simple_returns",
+    "max_drawdown",
+    "portfolio_returns",
+    "prices_to_returns",
+    "sharpe_confidence_interval",
+    "sharpe_ratio",
+    "sharpe_standard_error",
+    "simple_to_log_returns",
+    "sortino_ratio",
+    "summarize_performance",
+    "wealth_index",
+]

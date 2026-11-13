@@ -1,4 +1,4 @@
-"""Deterministic synthetic market data generator and known-answer fixtures (`quantlab.data.synthetic`).
+"""Deterministic synthetic market data generator and known-answer fixtures.
 
 Provides:
 1. `make_toy_5bar_fixture()`: Hand-calculated 5-bar US equity fixture with a 2-for-1 split
@@ -29,7 +29,7 @@ from quantlab.data.schemas import (
 
 
 def business_days_between(start_date: date, end_date: date) -> list[date]:
-    """Return chronological Monday–Friday dates in `[start_date, end_date]` inclusive."""
+    """Return chronological Monday-Friday dates in `[start_date, end_date]` inclusive."""
     if end_date < start_date:
         msg = f"end_date ({end_date}) must be >= start_date ({start_date})."
         raise ValueError(msg)
