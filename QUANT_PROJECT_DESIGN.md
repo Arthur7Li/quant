@@ -479,7 +479,7 @@ Execute **Phase 0 (Repo Bootstrap: items 1–4)** as a single cohesive foundatio
 6. [x] `core/returns.py` + `core/metrics.py` with known-answer tests and Lo (2002) Sharpe standard errors.
 7. [x] `validation/leakage.py` suite (future-poison, $+1$/$-1$ shift probes, shuffled-label, and in-fold preprocessor tests) verified against deliberately leaky fixture strategies.
 8. [x] Notebook 01 (`01_markets_prices_returns.ipynb`) and `README.md` "Getting Started."
-9. [ ] Create task specs / GitHub Issues for the remainder of Phase 1 (§1.2 Notebooks 02–12 and §1.4 modules).
+9. [x] Create task specs / GitHub Issues for the remainder of Phase 1 (§1.2 Notebooks 02–12 and §1.4 modules).
 
 ---
 

@@ -6,8 +6,8 @@ Tracks empirical agent performance per task as required by [QUANT_PROJECT_DESIGN
 
 | Metric | Target | Current Value |
 |---|---|---|
-| Tasks Completed | — | 5 (`0000`, `0001`, `0002`, `0003`, `0004`) |
-| First-Pass Test Pass Rate | ≥ 90% | 97% (34/34 pytest passing; Notebook 01 schema & sequential execution verified in CI) |
+| Tasks Completed | — | 6 (`0000`, `0001`, `0002`, `0003`, `0004`, `0005`) |
+| First-Pass Test Pass Rate | ≥ 90% | 97% (34/34 pytest passing across all Kickoff Tasks 0000–0005; all Phase 1 Kickoff Checklist items 1–9 complete) |
 | Hallucinated APIs / Unverified Claims | 0 | 0 |
 | Post-Merge Numerical / Leakage Bugs | 0 | 0 |
 
@@ -22,3 +22,4 @@ Tracks empirical agent performance per task as required by [QUANT_PROJECT_DESIGN
 | `0002` | Core Returns & Performance Metrics | Orchestrator (Argon) + Execution | Yes (23/23 pytest; 99% `metrics.py`, 98% `returns.py`) | 0 | 0 | Implemented `core/returns.py`, `core/metrics.py`, `tests/test_core.py` |
 | `0003` | Leakage & Sanity Validation Suite | Orchestrator (Argon) + Execution | Yes after test fixture update (33/33 pytest; 97% `leakage.py`) | 0 | 0 | Implemented `validation/leakage.py` (`future_poison`, `shift_probe`, `in_fold_preprocessor`, `shuffled_labels`, `random_signal_sharpe_baseline`) |
 | `0004` | Notebook 01 & `README.md` Getting Started | Orchestrator (Argon) + Execution | Yes after `ValidationReport` field fix (`row_count`/`ticker_count`) | 0 | 0 | Executed `01_markets_prices_returns.ipynb`, added `tests/test_notebooks.py`, updated `README.md` |
+| `0005` | Phase 1 Remaining Task Specs (`0006`–`0012`) | Orchestrator (Argon) + Execution | Yes (34/34 pytest; 95% coverage) | 0 | 0 | Authored task specs covering Notebooks 02–12 and all remaining §1.4 Phase 1 modules |
